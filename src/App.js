@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Search from './search'
+import Grid from './grid'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            fetchList: [
+                this.getByTitle,
+                this.getByAuthor,
+            ],
+            surveys: [
+              //{
+                //title:
+                //description:
+                //id:
+              //},
+            ],
+        }
+    }
+
+    componentWillMount() {
+
+    }
+    //this.props.fetchList[0]("hello")
+    render() {
+        return (
+            <div>
+                <Search fetch={this.state.fetchList} />
+                <Grid surveys={this.state.surveys} />
+            </div>
+        )
+    }
+    //fetch("url").then(res=>{res.json().then(body=>{)},err=>{});
+    getByTitle = (title) => {
+        fetch('www.surveysurver.com/getByTitle/'+title).then(
+            res.json()).then(res=>this.setState({surveys: res}))
+    }
+
 }
 
 export default App;
