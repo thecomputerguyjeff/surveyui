@@ -34,7 +34,7 @@ class App extends React.Component {
         )
     }
     //fetch("url").then(res=>{res.json().then(body=>{)},err=>{});
-    getByTitleEX = (title) => {
+    getByTitle = (title) => {
         fetch("https://ti-survey-server.herokuapp.com/api/getShellByTitle/" + title)
             .then((res) => res.json()
             , (err)=>{
@@ -44,7 +44,6 @@ class App extends React.Component {
             .then((res) => {
                 console.log("success")
                 this.setState({ surveys: res })
-                debugger
             }
             , (err) => {
                 console.log("There was an error converting to json")
@@ -61,14 +60,11 @@ class App extends React.Component {
             .then((res) => {
                 console.log("success")
                 this.setState({ surveys: res })
-                debugger
             }
             , (err) => {
                 console.log("There is an error converting to json")
                 console.log(err)
             })
     }
-
 }
-
 export default App;
