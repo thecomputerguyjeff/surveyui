@@ -12,3 +12,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.searchBar {
+  background-color: rgba(2, 195, 154, 1);
+  padding: .5em;
+}
+
+
+
+.form-control{
+  width: 30%;
+}
+
+.white {color:#ffffff;}
+
+.btn-outline-light:hover, .btn-secondary:hover, .show > .btn-secondary.dropdown-toggle {
+  color: rgba(2, 195, 154, 1);
+    background-color: white;
+    border-color: white;
+}
+
+.btn-secondary, .input {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+}
+
+.input::placeholder {
+  color: white;
+}

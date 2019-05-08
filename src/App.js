@@ -1,4 +1,6 @@
 import React from 'react'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Search from './search'
 import Grid from './grid'
 
@@ -11,13 +13,7 @@ class App extends React.Component {
                 this.getByTitle,
                 this.getByAuthor,
             ],
-            surveys: [
-              //{
-                //title:
-                //description:
-                //id:
-              //},
-            ],
+            surveys: [],
         }
     }
 
@@ -26,12 +22,14 @@ class App extends React.Component {
     }
     //this.props.fetchList[0]("hello")
     render() {
+        
+    library.add(faSearch);
         return (
-            <div>
+            <div className="surveyTable">
                 <Search fetch={this.state.fetchList} />
                 <Grid surveys={this.state.surveys} />
             </div>
-        )
+        );
     }
     //fetch("url").then(res=>{res.json().then(body=>{)},err=>{});
     getByTitle = (title) => {
@@ -50,6 +48,7 @@ class App extends React.Component {
                 console.log(err)
             })
     }
+
 
     getByAuthor = (author) => {
         fetch("https://ti-survey-server.herokuapp.com/api/getShellByAuthor/" + author)
