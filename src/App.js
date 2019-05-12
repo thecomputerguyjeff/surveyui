@@ -23,6 +23,8 @@ class App extends React.Component {
 
     componentWillMount() {
 
+        fetch('https://ti-survey-server.herokuapp.com/getAllShells').then(response=>this.setState({fetchList:response}));
+
     }
     //this.props.fetchList[0]("hello")
     render() {
