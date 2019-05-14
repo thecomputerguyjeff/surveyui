@@ -17,11 +17,24 @@ class App extends React.Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
 
-        fetch('https://ti-survey-server.herokuapp.com/getAllShells').then(response=>this.setState({fetchList:response}));
-
+        fetch('https://ti-survey-server.herokuapp.com/api/getAllShells')
+        .then((response)=>response.json()
+        , (err)=>{
+            console.log("There is an error connecting to the database")
+            console.log(err)
+        })
+        .then((res)=>{
+            console.log("Success")
+            this.setState({surveys: res})
+        }
+        , (err)=>{
+            console.log("There was an error mapping to the json object")
+            console.log(err)
+        })
     }
+
     //this.props.fetchList[0]("hello")
     render() {
         
