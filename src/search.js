@@ -29,9 +29,9 @@ export default class Search extends React.Component{
     render(){
         return(
             <div className="searchBar d-flex justify-content-around">
-                <Input type="text" name="keyword" placeholder="Search..." onChange={this.handleInputChange}className="input"/>
-                <FilterDropDown changeFilter={this.changeFilter} className="categories"/>
-                <Button outline color="light" onClick={this.submit}><FontAwesomeIcon icon="search" /></Button>
+                <Input type="search" name="keyword" placeholder="Search..." onChange={this.handleInputChange}className="searchInput"/>
+                <FilterDropDown changeFilter={this.changeFilter} className="transparent-btn"/>
+                <Button outline color="light" onClick={this.submit}  className="transparent-btn"><FontAwesomeIcon icon="search"/></Button>
             </div>
         );
     }
