@@ -13,18 +13,27 @@ code {
     monospace;
 }
 
-.searchBar {
+.createSurveyForm{
+  margin: 1em
+}
+
+.searchBar, .titleBar{
   background-color: rgba(2, 195, 154, 1);
+  color: white;
   padding: .5em;
 }
 
 
 
-.form-control{
+.searchInput.form-control{
   width: 30%;
 }
 
 .white {color:#ffffff;}
+
+.greybutton{
+  background-color: #6C6766;
+}
 
 .btn-outline-light:hover, .btn-secondary:hover, .show > .btn-secondary.dropdown-toggle {
   color: rgba(2, 195, 154, 1);
@@ -32,12 +41,28 @@ code {
     border-color: white;
 }
 
-.btn-secondary, .input {
+.btn-secondary, .searchInput .radioText{
   color: white;
   background-color: transparent;
   border-color: white;
 }
 
-.input::placeholder {
+.searchInput::placeholder {
   color: white;
+}
+
+.createSurveyForm{
+  background-color: #dbdbdb;
+  margin: 1em;
+  padding: 1em;
+  border-radius: .75em;
+}
+
+.newQuestionForm{
+  background-color: rgba(2, 195, 154, 1);
+  color: white;
+  margin: 1em -.5em;
+  padding: 1em;
+  border-radius: .75em;
+  
 }

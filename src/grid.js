@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table} from 'reactstrap';
-//import './themecss.css'; 
 
 export default class Grid extends React.Component {
   render() {
