@@ -1,6 +1,6 @@
 import React from 'react'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch, faDotCircle, faCheckSquare, faICursor, faPercent } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faDotCircle, faCheckSquare, faICursor, faPercent, faCheck } from '@fortawesome/free-solid-svg-icons'
 import Search from './search'
 import Grid from './grid'
 import CreateSurveyPage from './createSurvey/createSurveyPage';
@@ -25,14 +25,15 @@ class App extends React.Component {
     //this.props.fetchList[0]("hello")
     render() {
         
-    library.add(faSearch, faDotCircle, faCheckSquare, faICursor, faPercent);
+    library.add(faSearch, faDotCircle, faCheckSquare, faICursor, faPercent, faCheck);
         return (
-            //{(this.state.page==="Search") }
+            // {(this.state.page==="Search") }
             // <div className="surveyTable">
             //     <Search fetch={this.state.fetchList} />
             //     <Grid surveys={this.state.surveys} />
             // </div>
             <CreateSurveyPage />
+             
         );
     }
     //fetch("url").then(res=>{res.json().then(body=>{)},err=>{});

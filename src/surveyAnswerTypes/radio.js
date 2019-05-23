@@ -10,6 +10,7 @@ export default class Radio extends React.Component{
                   {this.props.text}
                 </Label>
                 </FormGroup>
+                
         )
     }
 }
