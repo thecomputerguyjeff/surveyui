@@ -10,7 +10,7 @@ export default class NewQuestion extends React.Component{
         this.state= {
             question:'',
             answerType: null,
-            answers: [],
+            answers: [''],
             answerCount: 1,
         }
     }
@@ -20,24 +20,24 @@ export default class NewQuestion extends React.Component{
     }
 
     addToAnswerCount = () =>{
-        this.setState({answerCount: this.state.answerCount+1})
+        const list = this.state.answers.concat('');
+        this.setState({answerCount: this.state.answerCount+1,
+                answers: list,})
     }
 
     getAnswerJSX = () => {
-        let answers =[]
+        let answersjsx =[]
         for (let i=0; i<this.state.answerCount; i++){
-            answers.push(<SurveyAnswerFactory 
+            answersjsx.push(<SurveyAnswerFactory 
                             answerType={this.state.answerType} 
                             key={i}
-                            handleInput={this.handleInputChange}/>);
-            const list = this.state.answers.concat('')
-            this.setState({
-                answers: list,
-            })
+                            id={i}
+                            handleInput={(e)=>this.addAnswers(this.id, e)}/>);
+        
         }
         return(
             <div>
-            {answers}
+            {answersjsx}
             </div>
         )
     }
@@ -46,11 +46,17 @@ export default class NewQuestion extends React.Component{
         this.setState({[event.target.name]: event.target.value})
     }
 
-    addAnswers = (event) => {
+    addAnswers = (i, event) => {
         console.log(event.target.value);
         this.setState(state => {
-            const answers = [...state.answers, event.target.value];
-            return answers;})
+            const answers = state.answers.map((answer, j) => {
+                if (j === i){
+                    return event.target.value;
+                } else {
+                    return answer;
+                }
+            })
+            return answers;});
     }
 
     render(){
