@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4042cea9-71d0-4046-b9b6-9d94b9cfe442" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/surverui.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RenderAnswers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RenderCheckbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RenderFreeform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RenderNumeric.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RenderRadio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/surveyAnswerTypes/numeric.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/surveyAnswerTypes/surveyAnswerFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/createSurvey/newQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/createSurvey/newQuestion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/surveyAnswerTypes/radio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/surveyAnswerTypes/radio.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RenderCheckbox.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
@@ -55,7 +48,75 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/createSurvey/createSurveyPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-48">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/createSurvey/newQuestion.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/surveyAnswerTypes/surveyAnswerFactory.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/reactstrap/src/Input.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/surveyAnswerTypes/numeric.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Change</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,10 +124,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/grid.js" />
         <option value="$PROJECT_DIR$/src/RenderAnswers.js" />
         <option value="$PROJECT_DIR$/src/RenderCheckbox.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" />
+        <option value="$PROJECT_DIR$/src/surveyAnswerTypes/numeric.js" />
+        <option value="$PROJECT_DIR$/src/surveyAnswerTypes/radio.js" />
+        <option value="$PROJECT_DIR$/src/surveyAnswerTypes/surveyAnswerFactory.js" />
+        <option value="$PROJECT_DIR$/src/createSurvey/newQuestion.js" />
       </list>
     </option>
   </component>
@@ -92,6 +158,18 @@
               <item name="surveyui" type="b2602c69:ProjectViewProjectNode" />
               <item name="surveyui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surveyui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surveyui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="createSurvey" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surveyui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surveyui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="surveyAnswerTypes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -170,24 +248,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2954000" />
+    <option name="totallyTimeSpent" value="4195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1024" height="745" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15071283" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3228106" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32857144" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -195,16 +268,21 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Key Promoter X" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.13650794" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Key Promoter X" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +296,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/surveyAnswerTypes/radio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/RenderCheckbox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -225,6 +313,57 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/reactstrap/src/Input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/createSurvey/createSurveyPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/surveyAnswerTypes/numeric.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/createSurvey/newQuestion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/surveyAnswerTypes/surveyAnswerFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
         </state>
       </provider>
     </entry>

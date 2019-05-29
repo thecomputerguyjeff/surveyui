@@ -1,11 +1,10 @@
 import React from 'react'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch, faDotCircle, faCheckSquare, faICursor, faPercent } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faDotCircle, faCheckSquare, faICursor, faPercent, faCheck } from '@fortawesome/free-solid-svg-icons'
 import Search from './search'
 import Grid from './grid'
 import CreateSurveyPage from './createSurvey/createSurveyPage';
 import RenderAnswers from './RenderAnswers';
-//import { constants } from 'http2';
 
 class App extends React.Component {
 
@@ -41,16 +40,16 @@ class App extends React.Component {
         })
     }
 
-    //this.props.fetchList[0]("hello")
     render() {
         
-    library.add(faSearch, faDotCircle, faCheckSquare, faICursor, faPercent);
+    library.add(faSearch, faDotCircle, faCheckSquare, faICursor, faPercent, faCheck);
         return (
-            <div className="surveyTable">
-                <Search fetch={this.state.fetchList} />
-                {this.state.render==='Search' &&<Grid surveys={this.state.surveys} onClick={this.renderAnswer}/>}
-                {this.state.render==='Answers' && <RenderAnswers id={this.state.renderKey} />}
-            </div>
+            //{/*<div className="surveyTable">*/}
+            // {/*    <Search fetch={this.state.fetchList} />*/}
+            // {/*    {this.state.render==='Search' &&<Grid surveys={this.state.surveys} onClick={this.renderAnswer}/>}*/}
+            // {/*    {this.state.render==='Answers' && <RenderAnswers id={this.state.renderKey} />}*/}
+            // {/*</div>*/}
+        <CreateSurveyPage />
         );
     }
 
@@ -91,7 +90,5 @@ class App extends React.Component {
                 console.log(err)
             })
     }
-
-
 }
 export default App;
