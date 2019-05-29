@@ -3,9 +3,17 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
+import TakeSurvey from './TakeSurvey.js';
+import { Router, Route} from 'react-router';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    // <Router>
+    //     <Route path="/" component ={App}>
+    //         <Route path="takeSurvey/:id" component={TakeSurvey}/>
+    //     </Route>
+    // </Router>,
+<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
