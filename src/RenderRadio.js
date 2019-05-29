@@ -13,24 +13,15 @@ class RenderRadio extends React.Component{
    }
 
 
-    render() {
+      render() {
+        let answers = this.state.questionInfo.potentialAnswers.map((potentialAnswer, i) => {
+            return <CardText key={i}>{potentialAnswer +" : " +
+                    this.state.questionInfo.allAnswers.reduce((sum, actualAnswer) => {
+                        return potentialAnswer === actualAnswer ? ++sum : sum;
+                    }, 0)
+            }</CardText>
+        });
       
-       var answers = [];
-       var answer = "";
-            for (var j=0; j<this.state.questionInfo.potentialAnswers.length; j++){
-              answer = this.state.questionInfo.potentialAnswers[j];
-              var numberOfTimes = 0;
-
-          for(var i=0; i<this.state.questionInfo.allAnswers.length; i++){
-            var answertoCheck = this.state.questionInfo.allAnswers[i]
-            if(answer===answertoCheck){
-            ++numberOfTimes;
-          }
-        }
-          
-              answers.push(answer+" : "+ numberOfTimes)
-          }
-       //make array and push parts into it let x=[]; x.push(<jsx thing>); <div>{x}</div>
         return (
           
                <div>
@@ -42,7 +33,7 @@ class RenderRadio extends React.Component{
              <CardTitle><b>Question:</b> {this.state.questionInfo.question}</CardTitle>
              <CardSubtitle><b>Question Type:</b> {this.state.questionInfo.questionType}</CardSubtitle>
              <CardText><b>Answers:</b></CardText>
-                          { answers.map(t=> <CardText>{t}</CardText>)}   
+                          { answers}   
            </CardBody>
          </Card>
 
@@ -50,14 +41,6 @@ class RenderRadio extends React.Component{
        
    }
    
-
-//     componentWillMount(){
-       
-//        this.setState({question:this.props.questions})
-//        this.setState({ready: true})
-   
-// }
-
 
 }
 export default RenderRadio;

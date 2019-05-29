@@ -32,7 +32,6 @@ class App extends React.Component {
             console.log(err)
         })
         .then((res)=>{
-            console.log("Success")
             this.setState({surveys: res})
         }
         , (err)=>{
@@ -41,7 +40,6 @@ class App extends React.Component {
         })
     }
 
-    //this.props.fetchList[0]("hello")
     render() {
         
     library.add(faSearch, faDotCircle, faCheckSquare, faICursor, faPercent);
@@ -91,7 +89,5 @@ class App extends React.Component {
                 console.log(err)
             })
     }
-
-
 }
 export default App;

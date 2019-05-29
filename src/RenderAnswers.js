@@ -14,23 +14,29 @@ class RenderAnswers extends React.Component {
     }
 
     howtorender() {
-        return (
-            this.state.questions.map((data) => {
+        
+        if(this.state.questions !== undefined){
+        return(
+        this.state.questions.map((data, i) => {
 
-                switch (data.questionType) {
-                    case "Radio":
-                        return <RenderRadio questionInfo={data}/>
-                    case "Numeric":
-                        return <RenderNumeric questionInfo={data}/>
-                    case "Checkbox":
-                        return <RenderCheckbox questionInfo={data}/>
-                    case "Freeform":
-                        return <RenderFreeform questionInfo={data}/>
-                    default:
-                        return <div></div>
-                }
-            })
-        )
+            switch (data.questionType) {
+                case "Radio":
+                    return <RenderRadio key={i} questionInfo={data}/>
+                case "Numeric":
+                    return <RenderNumeric key={i} questionInfo={data}/>
+                case "Checkbox":
+                    return <RenderCheckbox key={i} questionInfo={data}/>
+                case "Freeform":
+                    return <RenderFreeform key={i} questionInfo={data}/>
+                default:
+                    return <div></div>
+            }
+        })
+        )}
+        else{
+            return <div></div>
+        }
+        
     }
 
     render() {
@@ -43,7 +49,7 @@ class RenderAnswers extends React.Component {
 
     componentWillMount() {
         this.onClick(this.props.id)
-    }
+    }           
 
     onClick = (id) => {
 
@@ -57,9 +63,6 @@ class RenderAnswers extends React.Component {
                     this.setState({answers: result})
                     this.setState({questions: this.state.answers.questions})
 
-                    if (this.state.questions.length !== 0) {
-                        console.log("Success")
-                    }
                 }, (err) => {
                     console.log("There was an error mapping to json")
                     console.log(err)

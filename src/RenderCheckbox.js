@@ -14,10 +14,13 @@ class RenderCheckbox extends React.Component {
     }
 
     render() {
-        let answers = this.state.questionInfo.potentialAnswers.map((potentialAnswer) => {
-            return <CardText>{potentialAnswer +" : " +
+        let newActualAnswer=[];
+        let answers = this.state.questionInfo.potentialAnswers.map((potentialAnswer, i) => {
+            return <CardText key={i}>{potentialAnswer +" : " +
                     this.state.questionInfo.allAnswers.reduce((sum, actualAnswer) => {
-                        return potentialAnswer === actualAnswer ? ++sum : sum;
+                        newActualAnswer = actualAnswer.split(", ")
+                        for(let i=0; i<this.newActualAnswer.length; i++){
+                        return potentialAnswer === actualAnswer[i] ? ++sum : sum;}
                     }, 0)
             }</CardText>
         });

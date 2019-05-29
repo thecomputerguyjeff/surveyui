@@ -14,13 +14,12 @@
 
      render() {
             
-       var answers = [];
-       var answer = "";
-            for (var j=0; j<this.state.questionInfo.allAnswers.length; j++){
+       let answers = [];
+       let answer = "";
+            for (let j=0; j<this.state.questionInfo.allAnswers.length; j++){
               answer = this.state.questionInfo.allAnswers[j];
               
-          
-              answers.push(answer)
+            answers.push(answer)
           } 
         
          return (
@@ -34,22 +33,12 @@
               <CardSubtitle><b>Question Type:</b> {this.state.questionInfo.questionType}</CardSubtitle>
               
               <CardText><b>Answers:</b></CardText>
-                          { answers.map(t=> <CardText>{t}</CardText>)}   
+                          { answers.map((t, i)=> <CardText key={i}>{t}</CardText>)}   
            </CardBody>
           </Card>
 
         </div>);    
         
     }
-    
-
-//     componentWillMount(){
-        
-//        this.setState({question:this.props.questions})
-//        this.setState({ready: true})
-    
-// }
-
-
  }
  export default RenderFreeform;

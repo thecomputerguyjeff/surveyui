@@ -14,19 +14,17 @@
 
      render() {
                  
-      var answers = [];
-       var answer = "";
-            for (var j=0; j<this.state.questionInfo.allAnswers.length; j++){
-              answer = this.state.questionInfo.allAnswers[j];
-              
-          
+      let answers = [];
+       let answer = "";
+            for (let i=0; i<this.state.questionInfo.allAnswers.length; i++){
+                answer = this.state.questionInfo.allAnswers[i];
+                        
               answers.push(answer)
           } 
 
          return (
                 <div>
-                
-                                                  
+                                                                  
           <Card>
             <CardImg top width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Red_Checkmark.svg/341px-Red_Checkmark.svg.png" alt="Card image cap" style={{width: 50, height: 50, justifyContent: 'center'}}></CardImg>
             <CardBody>
@@ -34,22 +32,12 @@
               <CardSubtitle><b>Question Type:</b> {this.state.questionInfo.questionType}</CardSubtitle>
               
               <CardText><b>Answers:</b></CardText>
-                          { answers.map(t=> <CardText>{t}</CardText>)}   
+                          { answers.map((t,i)=> <CardText key={i}>{t}</CardText>)}   
            </CardBody>
           </Card>
 
         </div>);    
         
     }
-    
-
-//     componentWillMount(){
-        
-//        this.setState({question:this.props.questions})
-//        this.setState({ready: true})
-    
-// }
-
-
  }
  export default RenderNumeric;
