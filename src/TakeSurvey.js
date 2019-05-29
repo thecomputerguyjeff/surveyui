@@ -82,28 +82,41 @@ class TakeSurvey extends React.Component{
 
 
   handleClickCheck=(answer,i)=>{
+    
     let arr=this.state.userAnswers
-    //if(arr[i].has(answer)){
-    if(this.state.checkedAlready.has(answer)){
-      let anotherSet=this.state.checkedAlready;
-      anotherSet.delete(answer)
-      this.setState({checkedAlready:anotherSet})
+    if(arr[i]===undefined){
+      arr[i]=new Set();
+    }
+    if(arr[i].has(answer)){
+    //if(this.state.checkedAlready.has(answer)){
+      //let anotherSet=arr[i];//this.state.checkedAlready;
+      //anotherSet.delete(answer)
+      arr[i].delete(answer)
+      //this.setState({checkedAlready:arr[i]})
     }
     else{
-      this.state.checkedAlready.add(answer)
+      arr[i].add(answer)
+      //this.state.checkedAlready.add(answer)
       //console.log (this.state.checkedAlready)//arr[i]=[arr[i],answer]
     }
     //arr[i]=this.state.checkedAlready
-    arr[i]=Array.from(this.state.checkedAlready).toString()
+    //this.setState({checkedAlready:new Set()})
+    //arr[i]=Array.from(this.state.checkedAlready).toString()
     this.setState({userAnswers:arr})
     //TODO:find a way to drop the checks from a different question
+    console.log(this.state.userAnswers)
   }
   
-  // setUpAnswers=()=>{
-    
-  // }
+  setUpAnswers=()=>{
+    let arr=this.state.userAnswers
+    for(let i=0; i<arr.length;i++){
+      arr[i]=Array.from(arr[i]).toString()
+    }
+    this.setState({userAnswers:arr})   
+  }
 
   submit=()=>{
+    this.setUpAnswers()
     let data={
           'shellId':this.props.id,
           'surveyTaker':this.state.surveyTaker,
