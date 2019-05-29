@@ -52,7 +52,7 @@ code {
 }
 
 .createSurveyForm{
-  background-color: #dbdbdb;
+  /* background-color: #dbdbdb; */
   margin: 1em;
   padding: 1em;
   border-radius: .75em;
@@ -65,4 +65,9 @@ code {
   padding: 1em;
   border-radius: .75em;
   
+}
+
+.numericRange{
+  width: 20%;
+  display: inline;
 }
