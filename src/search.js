@@ -28,10 +28,15 @@ export default class Search extends React.Component{
     
     render(){
         return(
-            <div className="searchBar d-flex justify-content-around">
-                <Input type="search" name="keyword" placeholder="Search..." onChange={this.handleInputChange}className="searchInput"/>
-                <FilterDropDown changeFilter={this.changeFilter} className="transparent-btn"/>
-                <Button outline color="light" onClick={this.submit}  className="transparent-btn"><FontAwesomeIcon icon="search"/></Button>
+            <div className="searchBar d-flex  justify-content-around">
+                <div>
+                    <Button onClick={this.props.createSurvey}>Create New Survey</Button>
+                </div>
+                <div className="d-flex">
+                    <Input type="search" name="keyword" placeholder="Search..." onChange={this.handleInputChange}/>
+                    <FilterDropDown changeFilter={this.changeFilter} className="transparent-btn"/>
+                    <Button outline color="light" onClick={this.submit}  className="transparent-btn"><FontAwesomeIcon icon="search"/></Button>
+                </div>
             </div>
         );
     }

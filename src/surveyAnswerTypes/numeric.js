@@ -27,7 +27,7 @@ export default class Numeric extends React.Component {
                 <Label for="exampleEmail">{this.props.label}</Label>
                 <Input className={this.props.className}
                        invalid={!this.state.isValid}
-                       onChange={this.handleInput}
+                       onBlur={this.handleInput}
                        name={this.props.name}/>
                 <FormFeedback invalid>
                     Uh oh! Looks like you typed in something invalid.

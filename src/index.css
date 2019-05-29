@@ -17,10 +17,17 @@ code {
   margin: 1em
 }
 
-.searchBar, .titleBar{
+.searchBar{
   background-color: rgba(2, 195, 154, 1);
   color: white;
   padding: .5em;
+}
+
+.titleBar{
+  background-color: #17a2b8;
+  color: white;
+  text-align: center;
+  padding: .25em;
 }
 
 
