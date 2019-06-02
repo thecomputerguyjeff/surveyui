@@ -1,11 +1,7 @@
 import React from 'react'
 import RadioQuestion from './RadioQuestion'
 import CheckBoxQuestion from './CheckBoxQuestion'
-import { Input, Label, FormGroup } from 'reactstrap'
-import { Button } from 'reactstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Input, Label, FormGroup ,Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
 class TakeSurvey extends React.Component {
 
   constructor(props) {
@@ -13,8 +9,8 @@ class TakeSurvey extends React.Component {
     this.state = {
       userAnswers: [],
       surveyTaker: {},
-      checkedAlready: new Set()
-
+      checkedAlready: new Set(),
+      renderModal:false
     }
   }
 
@@ -22,9 +18,10 @@ class TakeSurvey extends React.Component {
     return (
       <div>
         {this.props.survey.questionList.map((q, i) => {
+          
           switch (q.responseType) {
             case "Radio": {
-              return <RadioQuestion question={q} index={i} onClick={(resp) => {
+              return <RadioQuestion question={q} key={i} index={i} onClick={(resp) => {
                 this.handleClickRadio(resp, i)
               }} />
             }
@@ -36,11 +33,22 @@ class TakeSurvey extends React.Component {
             case "Freeform": {
               return (
                 <FormGroup>
-                  <Label for="exampleText">{q.question}</Label>
+                  <Label htmlFor="answer">{q.question}</Label>
                   <Input type="textarea" name="text" id="exampleText"
                     onChange={(onChange) => this.handleInputChange(onChange, i)} />
                 </FormGroup>)
             }
+            case "Numeric": {
+              return (
+                <FormGroup>
+                  <label htmlFor="answer">{q.question}</label>
+                  <input type="number" id={q.question} name={q.question} onBlur={(onBlur) => this.handleInputChange(onBlur, i)}
+                    min={q.responseChoices[0]} max={q.responseChoices[1]}>
+                  </input>
+                </FormGroup>
+              )
+            }
+            default:{return(null)}
           }
         })
         }
@@ -52,10 +60,27 @@ class TakeSurvey extends React.Component {
         </FormGroup>
 
         <button onClick={this.submit}>Submit</button>
+        
+        <div>
+          <Modal isOpen={this.state.renderModal}  className={this.props.className}>
+            <ModalHeader>Thank you.</ModalHeader>
+            <ModalBody>
+              Thank you for submitting you answers for this survey.
+              Now you can create your own survey.
+            </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={this.openClose}>Close</Button>
+            </ModalFooter>
+          </Modal>
+        </div>
       </div>
     )
   }
 
+  openClose=()=>{
+    window.open('/', '_self')
+  }
+  
   readName = (event) => {
     let taker = this.state.surveyTaker
     taker.name = event.target.value
@@ -71,10 +96,7 @@ class TakeSurvey extends React.Component {
   handleInputChange = (event, i) => {
     let arr = this.state.userAnswers
     arr[i] = (event.target.value)
-    //console.log(arr[i])
-    //console.log(i)
     this.setState({ userAnswers: arr })
-    console.log(this.state.userAnswers)
   }
 
   handleClickRadio = (answer, i) => {
@@ -82,7 +104,6 @@ class TakeSurvey extends React.Component {
     let arr = this.state.userAnswers
     arr[i] = answer
     this.setState({ userAnswers: arr })
-    console.log("this is ", this.state.userAnswers);
   }
 
 
@@ -93,28 +114,17 @@ class TakeSurvey extends React.Component {
       arr[i] = new Set();
     }
     if (arr[i].has(answer)) {
-      //if(this.state.checkedAlready.has(answer)){
-      //let anotherSet=arr[i];//this.state.checkedAlready;
-      //anotherSet.delete(answer)
       arr[i].delete(answer)
-      //this.setState({checkedAlready:arr[i]})
     } else {
       arr[i].add(answer)
-      //this.state.checkedAlready.add(answer)
-      //console.log (this.state.checkedAlready)//arr[i]=[arr[i],answer]
     }
-    //arr[i]=this.state.checkedAlready
-    //this.setState({checkedAlready:new Set()})
-    //arr[i]=Array.from(this.state.checkedAlready).toString()
     this.setState({ userAnswers: arr })
-    //TODO:find a way to drop the checks from a different question
-    console.log(this.state.userAnswers)
   }
 
   setUpAnswers = () => {
     let arr = this.state.userAnswers
     for (let i = 0; i < arr.length; i++) {
-      if (typeof(arr[i])==="object") {
+      if (typeof (arr[i]) === "object") {
         arr[i] = Array.from(arr[i]).toString()
       }
     }
@@ -124,7 +134,7 @@ class TakeSurvey extends React.Component {
   submit = () => {
     this.setUpAnswers()
     let data = {
-      'shellId': this.props.id,
+      'shellId': this.props.id.toString,
       'surveyTaker': this.state.surveyTaker,
       'userAnswers': this.state.userAnswers
     }
@@ -135,11 +145,13 @@ class TakeSurvey extends React.Component {
       },
       body: JSON.stringify(data)
     })
-      .then(function (response) {
-        console.log(response);//DON""T LOG. DISPLAY A SUCCESS MESSAGE IN MODAL
+      .then((response) =>{
+        if(response.status===200){
+          this.setState({renderModal:true})
+        }
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch((error)=> {
+        console.log("error=",error);
       });
   }
 }
