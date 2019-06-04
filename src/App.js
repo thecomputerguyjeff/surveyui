@@ -29,8 +29,8 @@ class App extends React.Component {
         this.fetchAllSurveys()
     }
 
-    componentDidUpdate(){
-        if (this.state.render==='Search'){
+    componentDidUpdate(prevProps, prevState){
+        if (this.state.render==='Search' && prevState.render !=='Search'){
             this.fetchAllSurveys();
         }
     }
