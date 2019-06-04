@@ -9,7 +9,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
+        this.initialState = {
             fetchList: [
                 this.getByTitle,
                 this.getByAuthor,
@@ -18,10 +18,21 @@ class App extends React.Component {
             render: 'Search',
             renderKey: '',
             page: "Search",
-        }
+        };
+        this.state = this.initialState;
     }
 
     componentWillMount() {
+        this.fetchAllSurveys()
+    }
+
+    componentDidUpdate(){
+        if (this.state.render==='Search'){
+            this.fetchAllSurveys();
+        }
+    }
+
+    fetchAllSurveys= () =>{
 
         fetch('https://ti-survey-server.herokuapp.com/api/getAllShells')
         .then((response)=>response.json()
@@ -51,18 +62,22 @@ class App extends React.Component {
         }
         else {
             return (
-                //{/*<div className="surveyTable">*/}
-                // {/*    <Search fetch={this.state.fetchList} />*/}
-                // {/*    {this.state.render==='Search' &&<Grid surveys={this.state.surveys} onClick={this.renderAnswer}/>}*/}
-                // {/*    {this.state.render==='Answers' && <RenderAnswers id={this.state.renderKey} />}*/}
-                // {/*</div>*/}
-                <CreateSurveyPage/>
+                <div className="surveyTable">
+                <Search fetch={this.state.fetchList} createSurvey={this.renderCreateSurvey}/>
+                {this.state.render==='Search' &&<Grid surveys={this.state.surveys} onClick={this.renderAnswer}/>}
+                {this.state.render==='Answers' && <RenderAnswers id={this.state.renderKey} />}
+                {this.state.render==='CreateSurvey' && <CreateSurveyPage resetState={this.resetState}/>}
+                </div>
             );
         }
     }
 
     renderAnswer=(surveyID)=>{
         this.setState({renderKey:surveyID, render:'Answers'})
+    }
+
+    renderCreateSurvey=()=>{
+        this.setState({render:'CreateSurvey'})
     }
 
     getByTitle = (title) => {
@@ -81,7 +96,9 @@ class App extends React.Component {
             })
     }
 
-
+    resetState = () => {
+        this.setState(this.initialState);
+    }
     getByAuthor = (author) => {
         fetch("https://ti-survey-server.herokuapp.com/api/getShellByAuthor/" + author)
             .then((res) => res.json()
