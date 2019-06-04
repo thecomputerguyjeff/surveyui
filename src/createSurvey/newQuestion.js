@@ -34,7 +34,7 @@ export default class NewQuestion extends React.Component {
                 answerType={this.state.answerType}
                 key={i}
                 id={i}
-                handleInput={(e) => this.addAnswers(this.id, e)}
+                onChange={(e) => this.addAnswers(i, e)}
             />);
 
         }
@@ -50,17 +50,18 @@ export default class NewQuestion extends React.Component {
     }
 
     addAnswers = (i, event) => {
-        console.log("!!!!!" + i + event.target.value)
-        console.log(event.target.value);
+        let val = event.target.value;
         this.setState(state => {
             const answers = state.answers.map((answer, j) => {
                 if (j === i) {
-                    return event.target.value;
+                    return val;
                 } else {
                     return answer;
                 }
             })
-            return answers;
+            return {
+                answers,
+            };
         });
     }
 
@@ -103,6 +104,7 @@ export default class NewQuestion extends React.Component {
                     onClick={() => this.props.addAQuestion({
                         question: this.state.question,
                         answerType: this.state.answerType,
+                        answers: this.state.answers,
                     })}>
                     <FontAwesomeIcon icon="check"/>
                 </Button>
