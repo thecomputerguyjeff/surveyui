@@ -20,27 +20,32 @@ class TakeSurvey extends React.Component {
         {this.props.survey.questionList.map((q, i) => {
           switch (q.responseType) {
             case "Radio": {
-              return <RadioQuestion question={q} key={i} index={i} onClick={(resp) => {
+              return <div className="surveyQuestionBox">
+              <RadioQuestion question={q} key={i} index={i} onClick={(resp) => {
                 this.handleClickRadio(resp, i)
-              }} />
+              }} 
+              />
+              </div>
             }
             case "Checkbox": {
-              return <CheckBoxQuestion question={q} key={i} index={i} onClick={(resp) => {
+              return <div className="surveyQuestionBox">
+                <CheckBoxQuestion question={q} key={i} index={i} onClick={(resp) => {
                 this.handleClickCheck(resp, i)
               }} />
+              </div>
             }
             case "Freeform": {
               return (
-                <FormGroup key={i}>
-                  <Label htmlFor="answer">{q.question}</Label>
+                <FormGroup key={i} className="surveyQuestionBox">
+                  <Label htmlFor="answer" className="surveyQuestion">{q.question}</Label>
                   <Input type="textarea" name="text" id="exampleText"
                     onChange={(onChange) => this.handleInputChange(onChange, i)} />
                 </FormGroup>)
             }
             case "Numeric": {
               return (
-                <FormGroup key={i}>
-                  <label htmlFor="answer">{q.question}</label>
+                <FormGroup key={i} className="surveyQuestionBox">
+                  <label htmlFor="answer" className="surveyQuestion">{q.question}</label>
                   <input type="number" id={q.question}  name={q.question} onBlur={(onBlur) => this.handleInputChange(onBlur, i)}
                     min={q.responseChoices[0]} max={q.responseChoices[1]}>
                   </input>

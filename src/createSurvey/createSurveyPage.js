@@ -1,6 +1,8 @@
 import React from 'react'
-import {Input, Form, FormGroup, Label, Col, Button} from 'reactstrap'
+import { Input, Form, FormGroup, Label, Col, Button } from 'reactstrap'
 import NewQuestion from './newQuestion';
+import RadioQuestion from '../RadioQuestion'
+import CheckBoxQuestion from '../CheckBoxQuestion'
 
 export default class createSurveyPage extends React.Component {
     constructor(props) {
@@ -16,11 +18,11 @@ export default class createSurveyPage extends React.Component {
     }
 
     handleInputChange = (event) => {
-        this.setState({[event.target.name]: event.target.value})
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     createNewQuestion = () => {
-        this.setState({addAQuestion: true})
+        this.setState({ addAQuestion: true })
     }
 
     addAQuestion = (question) => {
@@ -68,7 +70,7 @@ export default class createSurveyPage extends React.Component {
                             <FormGroup row key={index}>
                                 <Label for={`survey${value}`} sm={2} className="font-weight-bold">{value}:</Label>
                                 <Col sm={10}>
-                                    <Input type="text" name={`survey${value}`} onChange={this.handleInputChange}/>
+                                    <Input type="text" name={`survey${value}`} onChange={this.handleInputChange} />
                                 </Col>
                             </FormGroup>
                         )
@@ -77,15 +79,47 @@ export default class createSurveyPage extends React.Component {
                     <FormGroup row>
                         <Label sm={2} className="font-weight-bold">Questions:</Label>
                     </FormGroup>
+                    {this.state.surveyQuestions.map((q, i) => {
+                        switch (q.responseType) {
+                            case "Radio": {
+                                return <div className="surveyQuestionBox">
+                                            <RadioQuestion question={q} key={i} index={i}/>
+                                        </div>
+                            }
+                            case "Checkbox": {
+                                return <div className="surveyQuestionBox">
+                                <CheckBoxQuestion question={q} key={i} index={i} />
+                                </div>
+                            }
+                            case "Freeform": {
+                                return (
+                                    <FormGroup key={i} className="surveyQuestionBox">
+                                        <Label htmlFor="answer" className="surveyQuestion">{q.question}</Label>
+                                        <Input type="textarea" name="text" id="exampleText" />
+                                    </FormGroup>)
+                            }
+                            case "Numeric": {
+                                return (
+                                    <FormGroup key={i} className="surveyQuestionBox">
+                                        <label htmlFor="answer" className="surveyQuestion">{q.question}</label>
+                                        <input type="number" id={q.question} name={q.question}>
+                                        </input>
+                                    </FormGroup>
+                                )
+                            }
+                            default: { return (null) }
+                        }
+                    })
+                    }
 
                     {this.state.addAQuestion ?
-                        <NewQuestion addAQuestion={this.addAQuestion}/> :
+                        <NewQuestion addAQuestion={this.addAQuestion} /> :
                         <span>
-                    <Button color="info" onClick={this.createNewQuestion}>+ Add a Question</Button>
-                    <br/>
-                </span>
+                            <Button color="info" onClick={this.createNewQuestion}>+ Add a Question</Button>
+                            <br />
+                        </span>
                     }
-                    <br/>
+                    <br />
 
                     <Button color="info" onClick={this.submitSurvey}>Submit</Button>
                 </Form>
