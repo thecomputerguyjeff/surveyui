@@ -14,7 +14,6 @@ export default class Search extends React.Component{
     }
 
     handleInputChange = (event) => {
-        console.log(event.target.value)
         this.setState({searchCritera: event.target.value})
     }
 
