@@ -6,10 +6,10 @@ export default class Radio extends React.Component {
         return (
             <FormGroup check>
                 <Label check>
-                    <Input type="radio" name={this.props.name}/>{' '}
+                    <Input type="radio" name={this.props.name} onClick={() => this.props.onClick()}/>
                     {this.props.text}
                 </Label>
             </FormGroup>
         )
     }
-}
+} 
