@@ -25,7 +25,7 @@ class TakeSurvey extends React.Component {
               }} />
             }
             case "Checkbox": {
-              return <CheckBoxQuestion question={q} index={i} onClick={(resp) => {
+              return <CheckBoxQuestion question={q} key={i} index={i} onClick={(resp) => {
                 this.handleClickCheck(resp, i)
               }} />
             }
@@ -33,7 +33,7 @@ class TakeSurvey extends React.Component {
               return (
                 <FormGroup>
                   <Label htmlFor="answer">{q.question}</Label>
-                  <Input type="textarea" name="text" id="exampleText"
+                  <Input type="textarea" name="text" key={i}id="exampleText"
                     onChange={(onChange) => this.handleInputChange(onChange, i)} />
                 </FormGroup>)
             }
@@ -41,7 +41,7 @@ class TakeSurvey extends React.Component {
               return (
                 <FormGroup>
                   <label htmlFor="answer">{q.question}</label>
-                  <input type="number" id={q.question} name={q.question} onBlur={(onBlur) => this.handleInputChange(onBlur, i)}
+                  <input type="number" id={q.question} key={i} name={q.question} onBlur={(onBlur) => this.handleInputChange(onBlur, i)}
                     min={q.responseChoices[0]} max={q.responseChoices[1]}>
                   </input>
                 </FormGroup>
@@ -131,7 +131,7 @@ class TakeSurvey extends React.Component {
   submit = () => {
     this.setUpAnswers()
     let data = {
-      'shellId': this.props.id.toString,
+      'shellId': this.props.survey.id,
       'surveyTaker': this.state.surveyTaker,
       'userAnswers': this.state.userAnswers
     }
