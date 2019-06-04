@@ -14,23 +14,27 @@ class RenderAnswers extends React.Component {
     }
 
     howtorender() {
-        return (
-            this.state.questions.map((data) => {
+        if(this.state.questions !== undefined){
+        return(
+        this.state.questions.map((data, i) => {
 
-                switch (data.questionType) {
-                    case "Radio":
-                        return <RenderRadio questionInfo={data}/>
-                    case "Numeric":
-                        return <RenderNumeric questionInfo={data}/>
-                    case "Checkbox":
-                        return <RenderCheckbox questionInfo={data}/>
-                    case "Freeform":
-                        return <RenderFreeform questionInfo={data}/>
-                    default:
-                        return <div></div>
-                }
-            })
-        )
+            switch (data.questionType) {
+                case "Radio":
+                    return <RenderRadio key={i} questionInfo={data}/>
+                case "Numeric":
+                    return <RenderNumeric key={i} questionInfo={data}/>
+                case "Checkbox":
+                    return <RenderCheckbox key={i} questionInfo={data}/>
+                case "Freeform":
+                    return <RenderFreeform key={i} questionInfo={data}/>
+                default:
+                    return <div key={i}>The answer to this survey cannnot be loaded right now. Please be sure that questions were added to this survey.</div>
+            }
+        })
+        )}
+        else{
+            return <div>The survey you chose cannnot be loaded right now. Please try again later</div>
+        }
     }
 
     render() {
@@ -56,10 +60,6 @@ class RenderAnswers extends React.Component {
             .then((result) => {
                     this.setState({answers: result})
                     this.setState({questions: this.state.answers.questions})
-
-                    if (this.state.questions.length !== 0) {
-                        console.log("Success")
-                    }
                 }, (err) => {
                     console.log("There was an error mapping to json")
                     console.log(err)

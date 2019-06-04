@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4042cea9-71d0-4046-b9b6-9d94b9cfe442" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RenderAnswers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RenderAnswers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RenderCheckbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RenderCheckbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RenderFreeform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RenderFreeform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RenderNumeric.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RenderNumeric.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RenderRadio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RenderRadio.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/RenderCheckbox.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -54,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+            <state relative-caret-position="690">
+              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -136,11 +141,11 @@
         <option value="$PROJECT_DIR$/src/createSurvey/newQuestion.js" />
         <option value="$PROJECT_DIR$/src/Templates/radio.js" />
         <option value="$PROJECT_DIR$/src/Survey.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/RadioQuestion.js" />
         <option value="$PROJECT_DIR$/src/TakeSurvey.js" />
         <option value="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -253,12 +258,12 @@
       <option name="presentableId" value="Default" />
       <updated>1558880235349</updated>
       <workItem from="1558880239731" duration="2954000" />
-      <workItem from="1559607264796" duration="623000" />
+      <workItem from="1559607264796" duration="970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5382000" />
+    <option name="totallyTimeSpent" value="5729000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -272,7 +277,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1024" height="745" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36354378" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36354378" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -289,8 +294,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32857144" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" visible="true" weight="0.43809524" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50101835" side_tool="true" weight="0.43809524" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.49898168" visible="true" weight="0.43809524" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -305,6 +310,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/surveyAnswerTypes/radio.js">
@@ -327,7 +358,7 @@
     <entry file="file://$PROJECT_DIR$/src/RenderCheckbox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -336,8 +367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+        <state relative-caret-position="690">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
