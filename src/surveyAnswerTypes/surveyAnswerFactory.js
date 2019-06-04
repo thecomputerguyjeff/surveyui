@@ -2,6 +2,7 @@ import React from 'react'
 import {Input} from 'reactstrap'
 import Radio from '../surveyAnswerTypes/radio';
 import Numeric from './numeric';
+import CheckBox from '../Templates/CB';
 
 export default class SurveyAnswerFactory extends React.Component {
     constructor(props) {
@@ -22,12 +23,11 @@ export default class SurveyAnswerFactory extends React.Component {
     }
 
     render() {
-         debugger;
         switch (this.props.answerType) {
             case "Radio":
                 return (
-                    <Radio text={<Input type="text" name="radioText"></Input>} name="name"
-                           onChange={this.props.handleInput}/>
+                    <Radio text={<Input type="text" name="radioText" onChange={this.props.onChange}></Input>} name="answers"
+                           onBlur={this.props.onBlur}/>
                 )
             case "Numeric":
                 return (
@@ -45,7 +45,7 @@ export default class SurveyAnswerFactory extends React.Component {
                 )
             case "Checkbox":
                 return (
-                    <p>Need to get checkbox.</p>
+                    <CheckBox text={<Input type="text" name="checkText" onChange={this.props.onChange}></Input>} name="check" />
                 )
             default:
                 return (
