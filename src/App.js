@@ -1,10 +1,7 @@
 import React from 'react'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch, faDotCircle, faCheckSquare, faICursor, faPercent, faCheck } from '@fortawesome/free-solid-svg-icons'
-import Search from './search'
-import Grid from './grid'
 import CreateSurveyPage from './createSurvey/createSurveyPage';
-import RenderAnswers from './RenderAnswers';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import TakeSurvey from './TakeSurvey'
 
@@ -33,7 +30,6 @@ class App extends React.Component {
             console.log(err)
         })
         .then((res)=>{
-            console.log("Success")
             this.setState({surveys: res})
         }
         , (err)=>{
@@ -77,7 +73,6 @@ class App extends React.Component {
                 console.log(err)
             })
             .then((res) => {
-                console.log("success")
                 this.setState({ surveys: res })
             }
             , (err) => {
@@ -94,7 +89,6 @@ class App extends React.Component {
                 console.log("There was an error connecting to the website")
                 console.log(err)})
             .then((res) => {
-                console.log("success")
                 this.setState({ surveys: res })
             }
             , (err) => {
@@ -110,7 +104,6 @@ class App extends React.Component {
                 console.log("There was an error connecting to the website")
                 console.log(err)})
             .then((res) => {
-                console.log("success")
                 this.setState({ surveys: res })
             }
             , (err) => {
@@ -118,11 +111,11 @@ class App extends React.Component {
                 console.log(err)
             })
     }
-
+//TODO: FIX KEY
     takeSurvey=({ match })=> {
         return (
             this.state.surveys.id?
-            (<TakeSurvey id={match.params.id} survey={this.state.surveys}/>
+            (<TakeSurvey id={match} key={match.params.id} survey={this.state.surveys}/>
         ):(<h3> Getting the Survey...{this.getById(match.params.id)}</h3>))
     }
 }
