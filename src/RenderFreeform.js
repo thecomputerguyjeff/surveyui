@@ -27,7 +27,7 @@
                 
                                                   
           <Card>
-            <CardImg top width="100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Red_Checkmark.svg/341px-Red_Checkmark.svg.png" alt="Card image cap" style={{width: 50, height: 50, justifyContent: 'center'}}></CardImg>
+            <CardImg top width="100%" src="http://www.attachmax.com/p/2018/11/printable-wide-ruled-lined-paper-world-of-label-regarding-lined-paper-wide-ruled-600x600.png" alt="Card image cap" style={{width: 50, height: 50, justifyContent: 'center'}}></CardImg>
             <CardBody>
               <CardTitle><b>Question:</b> {this.state.questionInfo.question}</CardTitle>
               <CardSubtitle><b>Question Type:</b> {this.state.questionInfo.questionType}</CardSubtitle>

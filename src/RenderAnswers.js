@@ -29,12 +29,12 @@ class RenderAnswers extends React.Component {
                 case "Freeform":
                     return <RenderFreeform key={i} questionInfo={data}/>
                 default:
-                    return <div></div>
+                    return <div key={i}>The answer to this survey cannnot be loaded right now. Please be sure that questions were added to this survey.</div>
             }
         })
         )}
         else{
-            return <div></div>
+            return <div>The survey you chose cannnot be loaded right now. Please try again later</div>
         }
         
     }

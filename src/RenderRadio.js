@@ -28,7 +28,7 @@ class RenderRadio extends React.Component{
                
                                                  
          <Card>
-           <CardImg top width="100%" src="https://assets.justinmind.com/blog/wp-content/uploads/2018/01/design-radio-button-enabled-disabled.gif" alt="Card image cap" style={{width: 100, height: 50, justifyContent: 'center'}}></CardImg>
+           <CardImg top width="100%" src="https://i.stack.imgur.com/OWcpX.png" alt="Card image cap" style={{width: 50, height: 50, justifyContent: 'center'}}></CardImg>
            <CardBody>
              <CardTitle><b>Question:</b> {this.state.questionInfo.question}</CardTitle>
              <CardSubtitle><b>Question Type:</b> {this.state.questionInfo.questionType}</CardSubtitle>
