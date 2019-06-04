@@ -31,17 +31,17 @@ class TakeSurvey extends React.Component {
             }
             case "Freeform": {
               return (
-                <FormGroup>
+                <FormGroup key={i}>
                   <Label htmlFor="answer">{q.question}</Label>
-                  <Input type="textarea" name="text" key={i}id="exampleText"
+                  <Input type="textarea" name="text" id="exampleText"
                     onChange={(onChange) => this.handleInputChange(onChange, i)} />
                 </FormGroup>)
             }
             case "Numeric": {
               return (
-                <FormGroup>
+                <FormGroup key={i}>
                   <label htmlFor="answer">{q.question}</label>
-                  <input type="number" id={q.question} key={i} name={q.question} onBlur={(onBlur) => this.handleInputChange(onBlur, i)}
+                  <input type="number" id={q.question}  name={q.question} onBlur={(onBlur) => this.handleInputChange(onBlur, i)}
                     min={q.responseChoices[0]} max={q.responseChoices[1]}>
                   </input>
                 </FormGroup>
