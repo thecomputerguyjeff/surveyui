@@ -18,7 +18,6 @@ class TakeSurvey extends React.Component {
     return (
       <div>
         {this.props.survey.questionList.map((q, i) => {
-          
           switch (q.responseType) {
             case "Radio": {
               return <RadioQuestion question={q} key={i} index={i} onClick={(resp) => {
@@ -92,7 +91,6 @@ class TakeSurvey extends React.Component {
     this.setState({ surveyTaker: taker })
   }
 
-
   handleInputChange = (event, i) => {
     let arr = this.state.userAnswers
     arr[i] = (event.target.value)
@@ -105,7 +103,6 @@ class TakeSurvey extends React.Component {
     arr[i] = answer
     this.setState({ userAnswers: arr })
   }
-
 
   handleClickCheck = (answer, i) => {
 
