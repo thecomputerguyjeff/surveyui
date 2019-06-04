@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4042cea9-71d0-4046-b9b6-9d94b9cfe442" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RadioQuestion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/RadioQuestion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TakeSurvey.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TakeSurvey.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TakeSurvey.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
+            <state relative-caret-position="214">
+              <caret line="155" column="25" lean-forward="true" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+            <state relative-caret-position="930">
+              <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -131,7 +130,6 @@
         <option value="$PROJECT_DIR$/src/grid.js" />
         <option value="$PROJECT_DIR$/src/RenderAnswers.js" />
         <option value="$PROJECT_DIR$/src/RenderCheckbox.js" />
-        <option value="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" />
         <option value="$PROJECT_DIR$/src/surveyAnswerTypes/numeric.js" />
         <option value="$PROJECT_DIR$/src/surveyAnswerTypes/radio.js" />
         <option value="$PROJECT_DIR$/src/surveyAnswerTypes/surveyAnswerFactory.js" />
@@ -141,6 +139,8 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/RadioQuestion.js" />
         <option value="$PROJECT_DIR$/src/TakeSurvey.js" />
+        <option value="$PROJECT_DIR$/src/createSurvey/createSurveyPage.js" />
+        <option value="$PROJECT_DIR$/src/index.css" />
       </list>
     </option>
   </component>
@@ -253,12 +253,21 @@
       <option name="presentableId" value="Default" />
       <updated>1558880235349</updated>
       <workItem from="1558880239731" duration="2954000" />
-      <workItem from="1559607264796" duration="216000" />
+      <workItem from="1559607264796" duration="623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4975000" />
+    <option name="totallyTimeSpent" value="5382000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1024" height="745" extended-state="6" />
@@ -327,8 +336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+        <state relative-caret-position="930">
+          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -378,8 +387,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TakeSurvey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
+        <state relative-caret-position="214">
+          <caret line="155" column="25" lean-forward="true" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="25" />
         </state>
       </provider>
     </entry>
