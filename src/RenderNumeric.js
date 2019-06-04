@@ -13,7 +13,6 @@
 
 
      render() {
-      
       let answers = new Map();
        let answer = "";
             for (let i=0; i<this.state.questionInfo.allAnswers.length; i++){

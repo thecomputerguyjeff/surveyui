@@ -49,7 +49,8 @@ export default class createSurveyPage extends React.Component {
         })
             .then((res) => res.json())
             .then(() => {
-            })//TODO
+                this.props.resetState();
+            })
             .catch((err) => console.log(err))
     }
 

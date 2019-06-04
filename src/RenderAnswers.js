@@ -14,7 +14,6 @@ class RenderAnswers extends React.Component {
     }
 
     howtorender() {
-        
         if(this.state.questions !== undefined){
         return(
         this.state.questions.map((data, i) => {
@@ -36,7 +35,6 @@ class RenderAnswers extends React.Component {
         else{
             return <div>The survey you chose cannnot be loaded right now. Please try again later</div>
         }
-        
     }
 
     render() {
@@ -49,7 +47,7 @@ class RenderAnswers extends React.Component {
 
     componentWillMount() {
         this.onClick(this.props.id)
-    }           
+    }
 
     onClick = (id) => {
 
@@ -62,7 +60,6 @@ class RenderAnswers extends React.Component {
             .then((result) => {
                     this.setState({answers: result})
                     this.setState({questions: this.state.answers.questions})
-
                 }, (err) => {
                     console.log("There was an error mapping to json")
                     console.log(err)

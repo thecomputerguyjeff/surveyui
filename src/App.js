@@ -1,10 +1,7 @@
 import React from 'react'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch, faDotCircle, faCheckSquare, faICursor, faPercent, faCheck } from '@fortawesome/free-solid-svg-icons'
-import Search from './search'
-import Grid from './grid'
 import CreateSurveyPage from './createSurvey/createSurveyPage';
-import RenderAnswers from './RenderAnswers';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import TakeSurvey from './TakeSurvey'
 
@@ -12,7 +9,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
+        this.initialState = {
             fetchList: [
                 this.getByTitle,
                 this.getByAuthor,
@@ -21,10 +18,21 @@ class App extends React.Component {
             render: 'Search',
             renderKey: '',
             page: "Search",
-        }
+        };
+        this.state = this.initialState;
     }
 
     componentWillMount() {
+        this.fetchAllSurveys()
+    }
+
+    componentDidUpdate(){
+        if (this.state.render==='Search'){
+            this.fetchAllSurveys();
+        }
+    }
+
+    fetchAllSurveys= () =>{
 
         fetch('https://ti-survey-server.herokuapp.com/api/getAllShells')
         .then((response)=>response.json()
@@ -55,17 +63,21 @@ class App extends React.Component {
         else {
             return (
                 <div className="surveyTable">
-                   <Search fetch={this.state.fetchList} />
-                    {this.state.render==='Search' &&<Grid surveys={this.state.surveys} onClick={this.renderAnswer}/>}
+                <Search fetch={this.state.fetchList} createSurvey={this.renderCreateSurvey}/>
+                {this.state.render==='Search' &&<Grid surveys={this.state.surveys} onClick={this.renderAnswer}/>}
                 {this.state.render==='Answers' && <RenderAnswers id={this.state.renderKey} />}
-               </div>
-                //<CreateSurveyPage/>
+                {this.state.render==='CreateSurvey' && <CreateSurveyPage resetState={this.resetState}/>}
+                </div>
             );
         }
     }
 
     renderAnswer=(surveyID)=>{
         this.setState({renderKey:surveyID, render:'Answers'})
+    }
+
+    renderCreateSurvey=()=>{
+        this.setState({render:'CreateSurvey'})
     }
 
     getByTitle = (title) => {
@@ -76,7 +88,6 @@ class App extends React.Component {
                 console.log(err)
             })
             .then((res) => {
-                console.log("success")
                 this.setState({ surveys: res })
             }
             , (err) => {
@@ -85,7 +96,9 @@ class App extends React.Component {
             })
     }
 
-
+    resetState = () => {
+        this.setState(this.initialState);
+    }
     getByAuthor = (author) => {
         fetch("https://ti-survey-server.herokuapp.com/api/getShellByAuthor/" + author)
             .then((res) => res.json()
@@ -93,7 +106,6 @@ class App extends React.Component {
                 console.log("There was an error connecting to the website")
                 console.log(err)})
             .then((res) => {
-                console.log("success")
                 this.setState({ surveys: res })
             }
             , (err) => {
@@ -109,7 +121,6 @@ class App extends React.Component {
                 console.log("There was an error connecting to the website")
                 console.log(err)})
             .then((res) => {
-                console.log("success")
                 this.setState({ surveys: res })
             }
             , (err) => {
@@ -117,11 +128,11 @@ class App extends React.Component {
                 console.log(err)
             })
     }
-
+//TODO: FIX KEY
     takeSurvey=({ match })=> {
         return (
             this.state.surveys.id?
-            (<TakeSurvey id={match.params.id} survey={this.state.surveys}/>
+            (<TakeSurvey id={match} key={match.params.id} survey={this.state.surveys}/>
         ):(<h3> Getting the Survey...{this.getById(match.params.id)}</h3>))
     }
 }

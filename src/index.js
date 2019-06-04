@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
-import TakeSurvey from './TakeSurvey.js';
-import { Router, Route} from 'react-router';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
