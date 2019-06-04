@@ -4,6 +4,9 @@ import { faSearch, faDotCircle, faCheckSquare, faICursor, faPercent, faCheck } f
 import CreateSurveyPage from './createSurvey/createSurveyPage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import TakeSurvey from './TakeSurvey'
+import Search from "./search";
+import Grid from "./grid";
+import RenderAnswers from "./RenderAnswers";
 
 class App extends React.Component {
 
