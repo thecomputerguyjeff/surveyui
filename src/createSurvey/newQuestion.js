@@ -103,8 +103,8 @@ export default class NewQuestion extends React.Component {
                     color="info"
                     onClick={() => this.props.addAQuestion({
                         question: this.state.question,
-                        answerType: this.state.answerType,
-                        answers: this.state.answers,
+                        responseType: this.state.answerType,
+                        responseChoices: this.state.answers,
                     })}>
                     <FontAwesomeIcon icon="check"/>
                 </Button>
