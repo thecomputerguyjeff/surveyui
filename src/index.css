@@ -73,6 +73,15 @@ code {
 }
 
 .numericRange{
-  width: 20%;
   display: inline;
+}
+
+.surveyQuestionBox {
+  background-color: #c4d9fc;
+  padding: .75em;
+  margin: .75em;
+}
+
+.surveyQuestion {
+  font-weight: bold;
 }
