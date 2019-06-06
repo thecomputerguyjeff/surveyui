@@ -124,6 +124,9 @@ class TakeSurvey extends React.Component {
       if (typeof (arr[i]) === "object") {
         arr[i] = Array.from(arr[i]).toString()
       }
+    }debugger
+    while(arr.length<this.props.survey.questionList.length){
+      arr.push(null)
     }
     this.setState({ userAnswers: arr })
   }
