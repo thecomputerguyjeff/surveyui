@@ -14,6 +14,7 @@ class RenderAnswers extends React.Component {
     }
 
     howtorender() {
+        
         if(this.state.questions !== undefined){
         return(
         this.state.questions.map((data, i) => {

@@ -21,8 +21,10 @@
               answers.set(answer, answers.get(answer)+1);
           }
           else{
+              if(answer !== null){
               answers.set(answer, 1);
           } 
+        }
         }
 
         let done = false;
@@ -30,7 +32,7 @@
         let keyValue = answers.entries();
         while(!done){
             let toprint = keyValue.next().value;
-            try{if(!toprint.includes(undefined)){debugger;
+            try{if(!toprint.includes(undefined)){
                  toprinter.push(toprint[0] +" : "+ toprint[1])
             }}catch(exception){
                 done=true;

@@ -16,7 +16,8 @@ class RenderCheckbox extends React.Component {
     render() {
         let answers = this.state.questionInfo.potentialAnswers.map((potentialAnswer, i) => {
             return <CardText key={i}>{potentialAnswer +" : " +
-                    this.state.questionInfo.allAnswers.reduce((sum, actualAnswer) => {
+                    this.state.questionInfo.allAnswers.filter(t=>t!==null)
+                    .reduce((sum, actualAnswer) => {
                         return actualAnswer.includes(potentialAnswer) ? ++sum : sum;
                     }, 0)
             }</CardText>
