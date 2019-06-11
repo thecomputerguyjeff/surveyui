@@ -3,6 +3,7 @@ import RenderCheckbox from './RenderCheckbox.js'
 import RenderRadio from './RenderRadio.js'
 import RenderNumeric from './RenderNumeric.js'
 import RenderFreeform from './RenderFreeform.js'
+import RenderError from './RenderError.js'
 
 class RenderAnswers extends React.Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class RenderAnswers extends React.Component {
                 case "Freeform":
                     return <RenderFreeform key={i} questionInfo={data}/>
                 default:
-                    return <div key={i}>The answer to this survey cannnot be loaded right now. Please be sure that questions were added to this survey.</div>
+                    return <RenderError key={i} message = {"The answer to this survey cannnot be loaded right now. Please be sure that questions were added to this survey."}/>
             }
         })
         )}
